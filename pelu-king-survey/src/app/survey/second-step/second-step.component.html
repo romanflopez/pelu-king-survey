@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">Como estuvo el servicio</div>
+  <app-smiley-face (smileySelected)="serviceStatus($event)"></app-smiley-face>
+
+  <div class="row">Como estuvo la atencion</div>
+  <div class="row justify-content-center">
+    <app-smiley-face
+      (smileySelected)="atentionStatus($event)"
+    ></app-smiley-face>
+  </div>
+  <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+  <button (click)="emit()" class="mt-3" mat-raised-button>Siguiente</button>
+</div>

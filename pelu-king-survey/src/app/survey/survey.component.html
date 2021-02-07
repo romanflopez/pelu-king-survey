@@ -1,1 +1,110 @@
-<p>survey works!</p>
+<ng-container *ngIf="urlOfficeId === CARAPACHAY || urlOfficeId === MAIPU">
+  <div [ngSwitch]="step">
+    <div *ngSwitchCase="0">
+      <app-first-step
+        (barberSelected)="barberSelected($event)"
+      ></app-first-step>
+    </div>
+    <div *ngSwitchCase="1"><app-second-step></app-second-step></div>
+    <div *ngSwitchCase="2"><app-third-step></app-third-step></div>
+    <div *ngSwitchDefault>output2</div>
+  </div>
+</ng-container>
+<!-- <ng-container *ngIf="urlOfficeId === CARAPACHAY || urlOfficeId === MAIPU">
+  <ng-container *ngIf="step === 0">
+    <div class="container">
+      <form #f="ngForm" name="f" (ngSubmit)="f.form.valid && moveTo(1)">
+        <h3>Que barbero te corto?</h3>
+        <div class="d-flex">
+          <div *ngFor="let b of barberList">
+            <div class="col-lg-4">
+              <img
+                class="img-fluid rounded"
+                width="350px"
+                height="350px"
+                src="/assets/{{ b.name }}.jpg"
+              />
+            </div>
+            <div class="col-lg-4">
+              <mat-radio-button required [value]="b.name">{{
+                b.name
+              }}</mat-radio-button>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex">Como estuvo el servicio?</div>
+
+        <div class="row">
+          <div class="col-lg-6">malo</div>
+          <div class="col-lg-6">excelente</div>
+        </div>
+        <div class="d-flex">
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button required *ngFor="let p of points" [value]="p">{{
+              p
+            }}</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="d-flex">
+          <mat-form-field class="example-full-width">
+            <mat-label>Dejanos tu comentario</mat-label>
+            <textarea matInput placeholder="sugerencias a mejorar"></textarea>
+          </mat-form-field>
+        </div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          mat-raised-button
+          [disabled]="!f.form.valid"
+        >
+          Siguiente
+        </button>
+      </form>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="step === 1">
+    <div class="container">
+      <div class="row">
+        <h2>Local</h2>
+      </div>
+      <form #f="ngForm" name="f" (ngSubmit)="f.form.valid && moveTo(2)">
+        <div class="row">Como Viste la limpieza del local?</div>
+        <div class="row">
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button required *ngFor="let p of points" [value]="p">{{
+              p
+            }}</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="row">
+          Te gusto la experiencia de pasar por peluking desde reservar un turno
+          a venirte a cortar
+        </div>
+        <div class="row">
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button required *ngFor="let p of points" [value]="p">{{
+              p
+            }}</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="d-flex">
+          <mat-form-field class="example-full-width">
+            <mat-label>Dejanos tu comentario</mat-label>
+            <textarea matInput placeholder="sugerencias a mejorar"></textarea>
+          </mat-form-field>
+        </div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          mat-raised-button
+          [disabled]="!f.form.valid"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="step === 2">
+    Gracias te ganaste una visita a la cancha de boke
+  </ng-container>
+</ng-container> -->

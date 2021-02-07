@@ -1,0 +1,12 @@
+.card-img-holder {
+  padding: 3px;
+}
+.selected {
+  color: #f1c40f;
+  font-weight: 500;
+}
+
+.border-top-rounded {
+  border-top-left-radius: 22.5px;
+  border-top-right-radius: 22.5px;
+}

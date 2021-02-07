@@ -1,0 +1,15 @@
+<div>
+  <div class="row justify-content-center">
+    <img
+      class="pr-2"
+      width="64px"
+      *ngFor="let f of faces"
+      (click)="faceSelected(f)"
+      src="/assets/{{ f }}.png"
+      alt=""
+    />
+  </div>
+  <div *ngIf="face" class="text-center mt-2" [ngClass]="face | textColor">
+    {{ face | textColor }}
+  </div>
+</div>

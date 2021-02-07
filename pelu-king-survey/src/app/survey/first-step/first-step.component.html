@@ -1,0 +1,31 @@
+<div class="container">
+  <h4>Con quien te cortaste ?</h4>
+  <div>
+    <div>
+      <div
+        class="material-shadow mb-1 card-img-holder card-rounded"
+        *ngFor="let b of barberList; let i = index"
+        (click)="selectBarber(b)"
+      >
+        <img
+          class="img-fluid border-top-rounded"
+          src="/assets/{{ b.name }}.jpg"
+        />
+        <div
+          class="mt-1 mb-1 text-center"
+          [ngClass]="{ selected: b.selected === true }"
+        >
+          {{ b.name | uppercase }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    (click)="emit()"
+    class="mt-3"
+    mat-raised-button
+    [disabled]="!model.name"
+  >
+    Siguiente
+  </button>
+</div>
